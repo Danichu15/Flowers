@@ -4,29 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#FFFFFF">
 
     <ImageButton
         android:id="@+id/botonMenu"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="87dp"
+        android:layout_height="78dp"
+        android:background="#00FFFFFF"
         android:onClick="añadirFlor"
+        android:src="@drawable/menu"
+        app:layout_constraintBottom_toTopOf="@+id/barra"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imagenNombreApp"
         android:layout_width="295dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/titulo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/barra"
+        android:layout_width="437dp"
+        android:layout_height="4dp"
+        android:src="@drawable/barrahorizontal"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenNombreApp"
+        app:layout_constraintVertical_bias="0.115" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="5dp"
+        android:layout_height="78dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/barravertical"
+        app:layout_constraintBottom_toBottomOf="@+id/barra"
+        app:layout_constraintEnd_toStartOf="@+id/imagenNombreApp"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/botonMenu"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/botonSocial"
@@ -56,6 +83,7 @@
         app:srcCompat="@android:drawable/btn_star" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="350dp"
         android:layout_height="600dp"
         android:layout_marginStart="8dp"
@@ -86,18 +114,18 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/imagenFlor1"
                         android:layout_width="324dp"
                         android:layout_height="362dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginBottom="16dp"
+                        android:src="@drawable/flor1"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@android:drawable/ic_dialog_map" />
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <ImageView
@@ -106,27 +134,29 @@
                     android:layout_height="72dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="24dp"
+                    android:src="@drawable/nombre1"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:srcCompat="@android:drawable/ic_lock_idle_lock" />
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <ImageButton
                     android:id="@+id/botonMeGusta1"
-                    android:layout_width="83dp"
-                    android:layout_height="69dp"
+                    android:layout_width="86dp"
+                    android:layout_height="78dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="24dp"
+                    android:background="#00FFFFFF"
+                    android:onClick="like1"
+                    android:src="@drawable/nolike"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.466"
-                    app:layout_constraintStart_toEndOf="@+id/nombreFlor1"
-                    app:layout_constraintVertical_bias="1.0"
-                    app:srcCompat="@drawable/ic_launcher_foreground" />
+                    app:layout_constraintStart_toEndOf="@+id/nombreFlor1" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/paquete2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -169,18 +199,19 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="24dp"
+                    android:contentDescription="TODO"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.466"
                     app:layout_constraintStart_toEndOf="@+id/nombreFlor2"
                     app:layout_constraintVertical_bias="1.0"
                     app:srcCompat="@drawable/ic_launcher_foreground"
-                    android:contentDescription="TODO"
                     tools:ignore="DuplicateIds" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/paquete3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -234,6 +265,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/paquete4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -287,6 +319,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/paquete5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
