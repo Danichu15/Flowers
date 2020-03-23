@@ -75,4 +75,60 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void like2(View view){
+
+        ImageButton like = (ImageButton) findViewById(R.id.botonMeGusta2);
+
+        if(!this.like2){
+            like.setImageResource(R.drawable.like);
+            this.like2 = true;
+        }else{
+            like.setImageResource((R.drawable.nolike));
+            this.like2 = false;
+        }
+
+    }
+
+    public void like3(View view){
+
+        ImageButton like = (ImageButton) findViewById(R.id.botonMeGusta3);
+
+        if(!this.like3){
+            like.setImageResource(R.drawable.like);
+            this.like3 = true;
+        }else{
+            like.setImageResource((R.drawable.nolike));
+            this.like3 = false;
+        }
+
+    }
+
+    public void like4(View view){
+
+        ImageButton like = (ImageButton) findViewById(R.id.botonMeGusta4);
+
+        if(!this.like4){
+            like.setImageResource(R.drawable.like);
+            this.like4 = true;
+        }else{
+            like.setImageResource((R.drawable.nolike));
+            this.like4 = false;
+        }
+
+    }
+
+    public void like5(View view){
+
+        ImageButton like = (ImageButton) findViewById(R.id.botonMeGusta5);
+
+        if(!this.like5){
+            like.setImageResource(R.drawable.like);
+            this.like5 = true;
+        }else{
+            like.setImageResource((R.drawable.nolike));
+            this.like5 = false;
+        }
+
+    }
+
 }

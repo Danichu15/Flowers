@@ -4,56 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
 
-    <ImageButton
-        android:id="@+id/botonMenu"
-        android:layout_width="87dp"
-        android:layout_height="78dp"
-        android:background="#00FFFFFF"
-        android:onClick="añadirFlor"
-        android:src="@drawable/menu"
-        app:layout_constraintBottom_toTopOf="@+id/barra"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imagenNombreApp"
-        android:layout_width="295dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/titulo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/barra"
-        android:layout_width="437dp"
-        android:layout_height="4dp"
-        android:src="@drawable/barrahorizontal"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navBar"
+        android:layout_width="438dp"
+        android:layout_height="79dp"
+        android:background="@drawable/navbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagenNombreApp"
-        app:layout_constraintVertical_bias="0.115" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="5dp"
-        android:layout_height="78dp"
-        android:layout_marginEnd="4dp"
-        android:src="@drawable/barravertical"
-        app:layout_constraintBottom_toBottomOf="@+id/barra"
-        app:layout_constraintEnd_toStartOf="@+id/imagenNombreApp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/botonMenu"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        <ImageButton
+            android:id="@+id/botonMenu"
+            android:layout_width="79dp"
+            android:layout_height="76dp"
+            android:layout_marginBottom="6dp"
+            android:background="#00FFFFFF"
+            android:onClick="añadirFlor"
+            android:src="@drawable/menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imagenNombreApp"
+            android:layout_width="347dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/titulo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/botonMenu"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.487" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
         android:id="@+id/botonSocial"
@@ -86,14 +74,13 @@
         android:id="@+id/scrollView2"
         android:layout_width="350dp"
         android:layout_height="600dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/botonSocial"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagenNombreApp"
+        app:layout_constraintTop_toBottomOf="@+id/navBar"
         app:layout_constraintVertical_bias="0.27">
 
         <LinearLayout
@@ -130,8 +117,8 @@
 
                 <ImageView
                     android:id="@+id/nombreFlor1"
-                    android:layout_width="211dp"
-                    android:layout_height="72dp"
+                    android:layout_width="182dp"
+                    android:layout_height="44dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="24dp"
                     android:src="@drawable/nombre1"
@@ -140,11 +127,11 @@
 
                 <ImageButton
                     android:id="@+id/botonMeGusta1"
-                    android:layout_width="86dp"
-                    android:layout_height="78dp"
+                    android:layout_width="75dp"
+                    android:layout_height="52dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginBottom="18dp"
                     android:background="#00FFFFFF"
                     android:onClick="like1"
                     android:src="@drawable/nolike"
@@ -179,18 +166,18 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@android:drawable/ic_dialog_map" />
+                        android:src="@drawable/rosa" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <ImageView
                     android:id="@+id/nombreFlor2"
-                    android:layout_width="211dp"
-                    android:layout_height="72dp"
+                    android:layout_width="182dp"
+                    android:layout_height="44dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="24dp"
+                    android:src="@drawable/nombre2"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:srcCompat="@android:drawable/ic_lock_idle_lock" />
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <ImageButton
                     android:id="@+id/botonMeGusta2"
@@ -198,14 +185,16 @@
                     android:layout_height="71dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginBottom="18dp"
+                    android:background="#00FFFFFF"
                     android:contentDescription="TODO"
+                    android:onClick="like2"
+                    android:src="@drawable/nolike"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.466"
+
                     app:layout_constraintStart_toEndOf="@+id/nombreFlor2"
-                    app:layout_constraintVertical_bias="1.0"
-                    app:srcCompat="@drawable/ic_launcher_foreground"
                     tools:ignore="DuplicateIds" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -239,8 +228,8 @@
 
                 <ImageView
                     android:id="@+id/nombreFlor3"
-                    android:layout_width="211dp"
-                    android:layout_height="72dp"
+                    android:layout_width="182dp"
+                    android:layout_height="44dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="24dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -253,13 +242,15 @@
                     android:layout_height="71dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginBottom="18dp"
+                    android:background="#00FFFFFF"
                     android:contentDescription="TODO"
+                    android:onClick="like3"
+                    android:src="@drawable/nolike"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.466"
                     app:layout_constraintStart_toEndOf="@+id/nombreFlor3"
-                    app:layout_constraintVertical_bias="1.0"
                     app:srcCompat="@drawable/ic_launcher_foreground" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -293,8 +284,8 @@
 
                 <ImageView
                     android:id="@+id/nombreFlor4"
-                    android:layout_width="211dp"
-                    android:layout_height="72dp"
+                    android:layout_width="182dp"
+                    android:layout_height="44dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="24dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -307,13 +298,15 @@
                     android:layout_height="71dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginBottom="18dp"
+                    android:background="#00FFFFFF"
                     android:contentDescription="TODO"
+                    android:onClick="like4"
+                    android:src="@drawable/nolike"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.466"
                     app:layout_constraintStart_toEndOf="@+id/nombreFlor4"
-                    app:layout_constraintVertical_bias="1.0"
                     app:srcCompat="@drawable/ic_launcher_foreground" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -347,8 +340,8 @@
 
                 <ImageView
                     android:id="@+id/nombreFlor5"
-                    android:layout_width="211dp"
-                    android:layout_height="72dp"
+                    android:layout_width="182dp"
+                    android:layout_height="44dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="24dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -361,17 +354,20 @@
                     android:layout_height="71dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginBottom="18dp"
+                    android:background="#00FFFFFF"
                     android:contentDescription="TODO"
+                    android:onClick="like5"
+                    android:src="@drawable/nolike"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.466"
                     app:layout_constraintStart_toEndOf="@+id/nombreFlor5"
-                    app:layout_constraintVertical_bias="1.0"
                     app:srcCompat="@drawable/ic_launcher_foreground" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
