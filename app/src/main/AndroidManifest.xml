@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FlowerActivity3" />
+        <activity android:name=".FlowerActivity4" />
+        <activity android:name=".FlowerActivity5" />
+        <activity android:name=".FlowerActivity1" />
+        <activity android:name=".FlowerActivity2" />
     </application>
 
 </manifest>

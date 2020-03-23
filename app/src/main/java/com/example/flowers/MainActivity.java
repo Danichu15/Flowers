@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -129,6 +130,31 @@ public class MainActivity extends AppCompatActivity {
             this.like5 = false;
         }
 
+    }
+    public void goFlower1(View view){
+        finish();
+        Intent intent = new Intent(this,FlowerActivity1.class);
+        startActivity(intent);
+    }
+    public void goFlower2(View view){
+        finish();
+        Intent intent = new Intent(this,FlowerActivity2.class);
+        startActivity(intent);
+    }
+    public void goFlower3(View view){
+        finish();
+        Intent intent = new Intent(this,FlowerActivity3.class);
+        startActivity(intent);
+    }
+    public void goFlower4(View view){
+        finish();
+        Intent intent = new Intent(this,FlowerActivity4.class);
+        startActivity(intent);
+    }
+    public void goFlower5(View view){
+        finish();
+        Intent intent = new Intent(this,FlowerActivity5.class);
+        startActivity(intent);
     }
 
 }

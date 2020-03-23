@@ -72,8 +72,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="350dp"
-        android:layout_height="600dp"
+        android:layout_width="346dp"
+        android:layout_height="554dp"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="8dp"
@@ -102,6 +102,7 @@
                     app:layout_constraintStart_toStartOf="parent">
 
                     <ImageButton
+                        android:onClick="goFlower1"
                         android:id="@+id/imagenFlor1"
                         android:layout_width="324dp"
                         android:layout_height="362dp"
@@ -157,16 +158,17 @@
 
                     <ImageView
                         android:id="@+id/imagenFlor2"
+                        android:onClick="goFlower2"
                         android:layout_width="324dp"
                         android:layout_height="362dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginBottom="8dp"
+                        android:src="@drawable/rosa"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:src="@drawable/rosa" />
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <ImageView
@@ -213,6 +215,7 @@
                     app:layout_constraintStart_toStartOf="parent">
 
                     <ImageView
+                        android:onClick="goFlower3"
                         android:id="@+id/imagenFlor3"
                         android:layout_width="324dp"
                         android:layout_height="362dp"
@@ -270,6 +273,7 @@
 
                     <ImageView
                         android:id="@+id/imagenFlor4"
+                        android:onClick="goFlower4"
                         android:layout_width="324dp"
                         android:layout_height="362dp"
                         android:layout_marginStart="8dp"
@@ -326,6 +330,7 @@
 
                     <ImageView
                         android:id="@+id/imagenFlor5"
+                        android:onClick="goFlower5"
                         android:layout_width="324dp"
                         android:layout_height="362dp"
                         android:layout_marginStart="8dp"
