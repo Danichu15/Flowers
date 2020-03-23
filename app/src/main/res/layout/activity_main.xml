@@ -43,8 +43,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottombar"
-        android:layout_width="365dp"
-        android:layout_height="77dp"
+        android:layout_width="457dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -53,31 +54,34 @@
             android:id="@+id/botonSocial"
             android:layout_width="90dp"
             android:layout_height="70dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/social"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/btn_star" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/botonInicio"
             android:layout_width="90dp"
             android:layout_height="70dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/flecha"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/botonSocial"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/btn_star" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/botonPerfil"
             android:layout_width="90dp"
             android:layout_height="70dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/perfil"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/botonSocial"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/btn_star" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
