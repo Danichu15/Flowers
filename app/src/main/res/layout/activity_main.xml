@@ -20,7 +20,7 @@
             android:layout_width="78dp"
             android:layout_height="85dp"
             android:background="#00FFFFFF"
-            android:onClick="añadirFlor"
+            android:onClick="desplegarMenu"
             android:src="@drawable/menu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,9 +52,9 @@
 
         <ImageButton
             android:id="@+id/botonSocial"
-            android:layout_width="90dp"
+            android:layout_width="109dp"
             android:layout_height="70dp"
-            android:background="#00FFFFFF"
+            android:background="@drawable/ripple_effect"
             android:src="@drawable/social"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,9 +63,10 @@
 
         <ImageButton
             android:id="@+id/botonInicio"
-            android:layout_width="90dp"
-            android:layout_height="70dp"
-            android:background="#00FFFFFF"
+            android:layout_width="173dp"
+            android:layout_height="69dp"
+            android:background="@drawable/ripple_effect"
+            android:onClick="top"
             android:src="@drawable/flecha"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/botonSocial"
@@ -74,9 +75,9 @@
 
         <ImageButton
             android:id="@+id/botonPerfil"
-            android:layout_width="90dp"
+            android:layout_width="168dp"
             android:layout_height="70dp"
-            android:background="#00FFFFFF"
+            android:background="@drawable/ripple_effect"
             android:src="@drawable/perfil"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -85,8 +86,9 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="320dp"
-        android:layout_height="460dp"
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/bottombar"
@@ -98,8 +100,10 @@
             android:id="@+id/scrollView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="4dp"
-            tools:layout_editor_absoluteY="24dp">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -133,6 +137,7 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <ImageView
@@ -262,9 +267,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginBottom="24dp"
+                        android:src="@drawable/nombre3"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:src="@drawable/nombre3" />
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <ImageButton
                         android:id="@+id/botonMeGusta3"
@@ -322,9 +327,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginBottom="24dp"
+                        android:src="@drawable/nombre4"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:src="@drawable/nombre4" />
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <ImageButton
                         android:id="@+id/botonMeGusta4"
@@ -381,9 +386,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginBottom="24dp"
+                        android:src="@drawable/nombre5"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:src="@drawable/nombre5" />
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <ImageButton
                         android:id="@+id/botonMeGusta5"
@@ -407,6 +412,76 @@
 
             </LinearLayout>
         </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/desplegable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navBar">
+
+        <ImageButton
+            android:id="@+id/botonFiltros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="desplegarFiltros"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/filtrosoff"
+            android:background="#00ffffff"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/filtros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/botonFiltros">
+
+            <ImageButton
+                android:id="@+id/color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00ffffff"
+                android:onClick="cambiarColor"
+                android:src="@drawable/todos"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/region"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/color"
+                app:srcCompat="@drawable/nombre2" />
+
+            <ImageButton
+                android:id="@+id/dificultad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/region"
+                app:srcCompat="@drawable/nombre2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/paleta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filtros"
+            app:srcCompat="@drawable/nombre4" />
+
+        <ImageButton
+            android:id="@+id/sesion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/paleta"
+            app:srcCompat="@drawable/nombre3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
