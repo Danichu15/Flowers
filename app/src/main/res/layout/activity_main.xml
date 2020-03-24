@@ -45,7 +45,7 @@
         android:id="@+id/bottombar"
         android:layout_width="457dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/navbar"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -86,7 +86,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/constraintLayoutScroll"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
@@ -452,17 +452,21 @@
                 android:id="@+id/region"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#00ffffff"
+                android:onClick="cambiarRegion"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/color"
-                app:srcCompat="@drawable/nombre2" />
+                app:srcCompat="@drawable/regiontodas" />
 
             <ImageButton
                 android:id="@+id/dificultad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#00ffffff"
+                android:onClick="cambiarDificultad"
+                android:src="@drawable/cuidadotodos"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/region"
-                app:srcCompat="@drawable/nombre2" />
+                app:layout_constraintTop_toBottomOf="@+id/region" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -470,9 +474,11 @@
             android:id="@+id/paleta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:onClick="cambiarColores"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/filtros"
-            app:srcCompat="@drawable/nombre4" />
+            app:srcCompat="@drawable/rosas" />
 
         <ImageButton
             android:id="@+id/sesion"
@@ -481,7 +487,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/paleta"
-            app:srcCompat="@drawable/nombre3" />
+            android:background="#00ffffff"
+            android:src="@drawable/inisesi" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
