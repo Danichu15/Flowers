@@ -131,7 +131,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_marginEnd="8dp"
                             android:background="#00FFFFFF"
-                            android:onClick="goFlower1"
+                            android:onClick="flowerPage"
                             android:src="@drawable/flor1"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
