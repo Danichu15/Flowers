@@ -728,9 +728,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void goFlower1(View view){
-        finish();
+
         Intent intent = new Intent(this,FlowerActivity1.class);
+        intent.putExtra("palette",this.indiceListaPaleta);
         startActivity(intent);
+        finish();
     }
     public void goFlower2(View view){
         finish();

@@ -18,7 +18,11 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class FlowerActivity1 extends AppCompatActivity {
+    ColorPalette palette;
+
     private boolean liked;
+
+    private int selectedPalette;
 
     protected void onCreate(Bundle savedInstanceState) {
         liked = false;
@@ -26,12 +30,38 @@ public class FlowerActivity1 extends AppCompatActivity {
         setContentView(R.layout.flower1);
         getSupportActionBar().hide();
         setTexts("Margarita",
-                "Fácilmente las margaritas podrían ser elegidas como las flores más hermosas del mundo y a nadie le sorprendería. Y es que estas flores tienen un encanto casi sobrenatural, que hace que hace que cualquier persona que contemple la margarita se sienta cautivado al instante.",
+                "Planta herbácea perenne, con hojas obovado-espatuladas o dentada-redondeadas. Escapos sin hojas de hasta 20 cm de altura. Las flores son blancas, a veces teñidas de púrpura; los flósculos, amarillos.\n" +
+                        "Florece y fructifica de octubre a junio.",
                 "Fácil",
                 "Centro-Europa",
                 "<2km");
+        selectedPalette = getIntent().getIntExtra("palette",1);
+        setColor(selectedPalette);
 
     }
+    private void setColor(int palette){
+        int selectedColor = this.palette.getParsedColor(palette);
+
+        TextView auxView = findViewById(R.id.dataTitle);
+        changeTextColor(auxView,selectedColor);
+
+        auxView = findViewById(R.id.regionTitle);
+        changeTextColor(auxView,selectedColor);
+
+        auxView= findViewById(R.id.descriptionTitle);
+        changeTextColor(auxView,selectedColor);
+
+        auxView = findViewById(R.id.name);
+        changeTextColor(auxView,selectedColor);
+
+        auxView = findViewById(R.id.careTitle);
+        changeTextColor(auxView,selectedColor);
+    }
+
+    private void changeTextColor(TextView view,int color){
+        view.setTextColor(color);
+    }
+
     private void setTexts(String name, String description,String difficulty,String region,String availability){
         TextView descriptionText = findViewById(R.id.description);
         TextView nameText = findViewById(R.id.name);
