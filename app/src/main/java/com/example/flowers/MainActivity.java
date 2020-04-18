@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -43,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         desplegableFiltos.setVisibility(View.INVISIBLE);
         desplegableFiltos.setEnabled(false);
         desplegableFiltos.setMaxHeight(0);
+        indiceListaPaleta = getIntent().getIntExtra("palette",0);
+        loadColors();
+        loadPalette();
 
     }
 
@@ -53,23 +57,7 @@ public class MainActivity extends AppCompatActivity {
             desplegable.setVisibility(View.INVISIBLE);
             desplegable.setEnabled(false);
 
-            switch(indiceListaPaleta){
-                case 0:
-                    menu.setImageResource(R.drawable.menuosc);
-                    break;
-                case 1:
-                    menu.setImageResource(R.drawable.menu);
-                    break;
-                case 2:
-                    menu.setImageResource(R.drawable.menuazu);
-                    break;
-                case 3:
-                    menu.setImageResource(R.drawable.menuver);
-                    break;
-                case 4:
-                    menu.setImageResource(R.drawable.menuama);
-                    break;
-            }
+            loadColors();
             //menu.setBackgroundColor(Color.parseColor("#00ff94db"));
         }else{
             desplegable.setVisibility(View.VISIBLE);
@@ -77,6 +65,22 @@ public class MainActivity extends AppCompatActivity {
 
             menu.setImageResource(R.drawable.menuclick);
            //menu.setBackgroundColor(Color.parseColor("#ff94db"));
+        }
+    }
+    private void loadColors(){
+        ImageButton menu = (ImageButton) findViewById(R.id.botonMenu);
+        switch(indiceListaPaleta){
+
+            case 0:
+                menu.setImageResource(R.drawable.menu);
+                break;
+            case 1:
+                menu.setImageResource(R.drawable.menuazu);
+                break;
+            case 2:
+                menu.setImageResource(R.drawable.menuver);
+                break;
+
         }
     }
 
@@ -555,8 +559,13 @@ public class MainActivity extends AppCompatActivity {
         ImageButton menu = (ImageButton)findViewById(R.id.botonMenu);
         ImageView titulo = (ImageView)findViewById(R.id.imagenNombreApp);
         ConstraintLayout fondo = (ConstraintLayout)findViewById(R.id.constraintLayoutScroll);
-
-        switch (indiceListaPaleta){
+        if (indiceListaPaleta<2) {
+            indiceListaPaleta++;
+        }else{
+            indiceListaPaleta=0;
+        }
+        loadPalette();
+        /*switch (indiceListaPaleta){
             case 0:
                 botonColores.setImageResource(R.drawable.rosas);
                 indiceListaPaleta++;
@@ -595,7 +604,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 2:
                 botonColores.setImageResource(R.drawable.verdes);
-                indiceListaPaleta++;
+                indiceListaPaleta=0;
 
                 navBar.setBackgroundResource(R.drawable.navbarver);
 
@@ -611,44 +620,79 @@ public class MainActivity extends AppCompatActivity {
                 fondo.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
                 break;
-            case 3:
-                botonColores.setImageResource(R.drawable.amarillos);
-                indiceListaPaleta++;
+        }*/
 
-                navBar.setBackgroundResource(R.drawable.navbarosc);
+    }
+    private void loadPalette(){
+        ImageButton botonColores = (ImageButton)findViewById(R.id.paleta);
 
-                nombre1.setImageResource(R.drawable.nombre1ama);
-                nombre2.setImageResource(R.drawable.nombre2ama);
-                nombre3.setImageResource(R.drawable.nombre3ama);
-                nombre4.setImageResource(R.drawable.nombre4ama);
-                nombre5.setImageResource(R.drawable.nombre5ama);
+        ConstraintLayout navBar = (ConstraintLayout)findViewById(R.id.navBar);
+        ConstraintLayout bottomBar = (ConstraintLayout)findViewById(R.id.bottombar);
+        ImageView nombre1 = (ImageView)findViewById(R.id.nombreFlor1);
+        ImageView nombre2 = (ImageView)findViewById(R.id.nombreFlor2);
+        ImageView nombre3 = (ImageView)findViewById(R.id.nombreFlor3);
+        ImageView nombre4 = (ImageView)findViewById(R.id.nombreFlor4);
+        ImageView nombre5 = (ImageView)findViewById(R.id.nombreFlor5);
+        ImageButton menu = (ImageButton)findViewById(R.id.botonMenu);
+        ImageView titulo = (ImageView)findViewById(R.id.imagenNombreApp);
+        ConstraintLayout fondo = (ConstraintLayout)findViewById(R.id.constraintLayoutScroll);
+        switch (indiceListaPaleta){
+            case 0:
+                botonColores.setImageResource(R.drawable.rosas);
 
-                //menu.setImageResource(R.drawable.menuama);
-                titulo.setImageResource(R.drawable.tituloama);
 
-                fondo.setBackgroundColor(Color.parseColor("#424242"));
+                navBar.setBackgroundResource(R.drawable.navbar);
+
+                nombre1.setBackgroundResource(R.drawable.nombre1);
+                nombre2.setBackgroundResource(R.drawable.nombre2);
+                nombre3.setBackgroundResource(R.drawable.nombre3);
+                nombre4.setBackgroundResource(R.drawable.nombre4);
+                nombre5.setBackgroundResource(R.drawable.nombre5);
+
+                //menu.setImageResource(R.drawable.menu);
+                titulo.setImageResource(R.drawable.titulo);
+
+                fondo.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
                 break;
-            case 4:
-                botonColores.setImageResource(R.drawable.oscuros);
-                indiceListaPaleta = 0;
+            case 1:
+                botonColores.setImageResource(R.drawable.azules);
 
-                navBar.setBackgroundResource(R.drawable.navbarosc);
 
-                nombre1.setImageResource(R.drawable.nombre1osc);
-                nombre2.setImageResource(R.drawable.nombre2osc);
-                nombre3.setImageResource(R.drawable.nombre3osc);
-                nombre4.setImageResource(R.drawable.nombre4osc);
-                nombre5.setImageResource(R.drawable.nombre5osc);
+                navBar.setBackgroundResource(R.drawable.navbarazu);
 
-                //menu.setImageResource(R.drawable.menuosc);
-                titulo.setImageResource(R.drawable.tituloosc);
+                nombre1.setImageResource(R.drawable.nombre1azu);
+                nombre2.setImageResource(R.drawable.nombre2azu);
+                nombre3.setImageResource(R.drawable.nombre3azu);
+                nombre4.setImageResource(R.drawable.nombre4azu);
+                nombre5.setImageResource(R.drawable.nombre5azu);
 
-                fondo.setBackgroundColor(Color.parseColor("#424242"));
+                //menu.setImageResource(R.drawable.menuazu);
+                titulo.setImageResource(R.drawable.tituloazu);
+
+                fondo.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
                 break;
+            case 2:
+                botonColores.setImageResource(R.drawable.verdes);
+
+
+                navBar.setBackgroundResource(R.drawable.navbarver);
+
+                nombre1.setImageResource(R.drawable.nombre1ver);
+                nombre2.setImageResource(R.drawable.nombre2ver);
+                nombre3.setImageResource(R.drawable.nombre3ver);
+                nombre4.setImageResource(R.drawable.nombre4ver);
+                nombre5.setImageResource(R.drawable.nombre5ver);
+
+                //menu.setImageResource(R.drawable.menuver);
+                titulo.setImageResource(R.drawable.titulover);
+
+                fondo.setBackgroundColor(Color.parseColor("#FFFFFF"));
+
+                break;
+
         }
-
     }
 
     public void top(View veiew) throws InterruptedException {
@@ -727,32 +771,31 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-    public void flower1page(View view){
 
-    }
     public void goFlower2(View view){
-        finish();
-        Intent intent = new Intent(this,FlowerActivity2.class);
-        startActivity(intent);
+       /* finish();
+        Intent intent = new Intent(this,FlowerActivity1.class);
+        startActivity(intent);*/
     }
     public void goFlower3(View view){
-        finish();
+        /*finish();
         Intent intent = new Intent(this,FlowerActivity3.class);
-        startActivity(intent);
+        startActivity(intent);*/
     }
     public void goFlower4(View view){
-        finish();
+        /*finish();
         Intent intent = new Intent(this,FlowerActivity4.class);
-        startActivity(intent);
+        startActivity(intent);*/
     }
     public void goFlower5(View view){
-        finish();
+        /*finish();
         Intent intent = new Intent(this,FlowerActivity5.class);
-        startActivity(intent);
+        startActivity(intent);*/
     }
 
     public void flowerPage(View view) {
-
+        view.getId();
+        //Log.d(view.getId(),view.getId());
         Intent intent = new Intent(this,FlowerActivity1.class);
         intent.putExtra("palette",this.indiceListaPaleta);
         startActivity(intent);

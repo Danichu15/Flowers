@@ -7,11 +7,11 @@ public class ColorPalette {
 
     public ColorPalette(){
         //Pink (default)
-        palette.put(1,"ff4383");
+        palette.put(0,"#ff4383");
         //Blue
-        palette.put(2,"006aff");
+        palette.put(1,"#006aff");
         //Green
-        palette.put(3,"00a714");
+        palette.put(2,"#00a714");
     }
 
     public int getParsedColor(int paletteSelection){

@@ -17,12 +17,15 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.HashMap;
+
 public class FlowerActivity1 extends AppCompatActivity {
-    ColorPalette palette;
+    ColorPalette palette = new ColorPalette();
 
     private boolean liked;
 
-    private int selectedPalette;
+    private int selectedPalette = 0;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         liked = false;
@@ -35,12 +38,15 @@ public class FlowerActivity1 extends AppCompatActivity {
                 "Fácil",
                 "Centro-Europa",
                 "<2km");
-        selectedPalette = getIntent().getIntExtra("palette",1);
-        setColor(selectedPalette);
+        selectedPalette = getIntent().getIntExtra("palette",0);
+        setColor();
 
     }
-    private void setColor(int palette){
-        int selectedColor = this.palette.getParsedColor(palette);
+
+
+    private void setColor(){
+
+        int selectedColor = palette.getParsedColor(selectedPalette);
 
         TextView auxView = findViewById(R.id.dataTitle);
         changeTextColor(auxView,selectedColor);
@@ -56,6 +62,11 @@ public class FlowerActivity1 extends AppCompatActivity {
 
         auxView = findViewById(R.id.careTitle);
         changeTextColor(auxView,selectedColor);
+
+        auxView = findViewById(R.id.availableTitle);
+        changeTextColor(auxView,selectedColor);
+
+        changeLogo();
     }
 
     private void changeTextColor(TextView view,int color){
@@ -90,7 +101,27 @@ public class FlowerActivity1 extends AppCompatActivity {
     public void goMenu(View view) {
         finish();
         Intent intent = new Intent(this,MainActivity.class);
+        intent.putExtra("palette",selectedPalette);
         startActivity(intent);
     }
 
+    public void changeLogo(){
+        ImageView menu = findViewById(R.id.logo);
+        ConstraintLayout navBar = (ConstraintLayout)findViewById(R.id.navBar);
+        switch(selectedPalette){
+            case 1:
+                menu.setImageResource(R.drawable.tituloazu);
+                navBar.setBackgroundResource(R.drawable.navbarazu);
+                break;
+            case 2:
+                menu.setImageResource(R.drawable.titulover);
+                navBar.setBackgroundResource(R.drawable.navbarver);
+                break;
+            default:
+                menu.setImageResource(R.drawable.titulo);
+                navBar.setBackgroundResource(R.drawable.navbar);
+                break;
+
+        }
+    }
 }
